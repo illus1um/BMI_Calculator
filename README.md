@@ -25,7 +25,7 @@ This BMI Calculator is a simple web application that helps users calculate their
 2. **Navigate to the project directory:**
 
     ```bash
-    cd bmi-calculator
+    cd BMI_Calculator
     ```
 
 3. **Install dependencies:**
