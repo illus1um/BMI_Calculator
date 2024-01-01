@@ -1,19 +1,20 @@
-const express = require('express');
+const express = require("express");
 const router = express.Router();
 
 let bmiHistory = [];
 
-router.get('/', (req, res) => {
-  res.sendFile('index.html', { root: './public' });
+router.get("/", (req, res) => {
+  res.sendFile("index.html", { root: "./public" });
 });
 
-router.get('/history', (req, res) => {
-  res.sendFile('history.html', { root: './public' });
+router.get("/history", (req, res) => {
+  res.sendFile("history.html", { root: "./public" });
 });
 
-router.route('/bmicalculator')
+router
+  .route("/bmicalculator")
   .get((req, res) => {
-    res.sendFile('index.html', { root: './public' });
+    res.sendFile("index.html", { root: "./public" });
   })
   .post((req, res) => {
     const weight = parseFloat(req.body.weight);
@@ -27,13 +28,13 @@ router.route('/bmicalculator')
     res.send(resultText);
   });
 
-router.get('/gethistory', (req, res) => {
+router.get("/gethistory", (req, res) => {
   res.json(bmiHistory);
 });
 
 function calculateBMI(weight, height) {
   if (weight <= 0 || height <= 0) {
-    return 'Invalid input. Weight and height should be positive values.';
+    return "Invalid input. Weight and height should be positive values.";
   }
 
   const bmi = weight / Math.pow(height, 2);

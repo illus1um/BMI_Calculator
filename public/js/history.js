@@ -1,8 +1,8 @@
-fetch('/gethistory')
-  .then(response => response.json())
-  .then(data => {
-    const historyTable = document.getElementById('historyTable');
-    data.forEach(item => {
+fetch("/gethistory")
+  .then((response) => response.json())
+  .then((data) => {
+    const historyTable = document.getElementById("historyTable");
+    data.forEach((item) => {
       const row = `
         <tr>
           <td>${item.bmi}</td>
